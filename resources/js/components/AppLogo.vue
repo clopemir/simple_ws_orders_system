@@ -1,5 +1,8 @@
 <script setup lang="ts">
 // import AppLogoIcon from '@/components/AppLogoIcon.vue';
+
+const  nombre:string = "Tu Nombre" // cambiar
+
 </script>
 
 <template>
@@ -8,6 +11,6 @@
          <img src="logo/logo.svg" alt="Logo">
     </div>
     <div class="ml-1 grid flex-1 text-left text-sm">
-        <span class="mb-0.5 truncate font-semibold leading-none">Franco | Paletas</span>
+        <span class="mb-0.5 truncate font-semibold leading-none">{{ nombre }}</span>
     </div>
 </template>

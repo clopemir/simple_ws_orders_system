@@ -21,8 +21,8 @@ const props = defineProps({
 });
 
 
-const number = '5214626016703'
-const tienda = 'Helados Franco'
+const number = '5212224567891' // Tu numero de WhatsApp con código de país
+const tienda = 'Mi Tienda' // Nombre de la tienda
 
 const carrito = ref([]);
 const productosDisponibles = ref([...props.productos.data]);
@@ -180,12 +180,12 @@ async function enviarPedido() {
     const payload = {
         nombre_cliente: nombre.value,
         direccion: direccion.value,
-        telefono: telefonoCliente.value || '', // Enviar string vacío si no hay teléfono
+        telefono: telefonoCliente.value || '',
         m_pago: metodoPago.value,
         productos: carrito.value.map(item => ({
         producto_id: item.id,
         cantidad: item.cantidad,
-        precio_unitario: item.precio // 'precio' en el carrito es el precio unitario
+        precio_unitario: item.precio
         }))
     };
 
@@ -223,7 +223,7 @@ async function enviarPedido() {
             mostrarMensaje(errorMessage);
         },
         onFinish: () => {
-            isLoading.value = false; // Termina la carga independientemente del resultado
+            isLoading.value = false;
         }
     });
 }
@@ -246,7 +246,7 @@ onMounted(() => {
 
         <h1 class="flex items-center justify-center gap-3 text-2xl sm:text-4xl font-bold text-center mb-8 text-pink-600 dark:text-pink-400">
             <img src="/logo/logo.svg"  class="w-16 h-16" alt="logo">
-            <span>Paletas de Hielo Franco</span>
+            <span>{{ tienda }}</span>
         </h1>
 
       <section class="mb-10">
@@ -431,7 +431,7 @@ onMounted(() => {
       </transition>
 
       <footer class="mt-16 text-center text-sm text-gray-500 dark:text-gray-400">
-        &copy; {{ currentYear }} Paletas de Hielo Franco. Todos los derechos reservados.
+        &copy; {{ currentYear }} | {{ tienda }}. Todos los derechos reservados.
       </footer>
     </div>
 </template>

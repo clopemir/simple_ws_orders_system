@@ -1,7 +1,7 @@
 # 📦 Proyecto Laravel + Vue 3 + Inertia
 
 Este repositorio contiene un proyecto web construido con **Laravel** en el backend y **Vue 3 con Inertia.js** en el frontend.
-Se trata de un sistema sencillo de pedidios vía WhatsApp.
+Se trata de un sistema sencillo de pedidos vía WhatsApp.
 
 ---
 
